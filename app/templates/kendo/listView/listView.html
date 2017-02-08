@@ -1,0 +1,15 @@
+
+<script src="http://demos.telerik.com/kendo-ui/content/shared/js/products.js"></script>
+<div kendo-list-view id="listView" k-data-source="source">
+            <div class="product" k-template>
+                <img ng-src="http://demos.telerik.com/kendo-ui/content/web/foods/{{dataItem.ProductID}}.jpg" alt=" {{dataItem.ProductName}} image" />
+                <h3>{{ dataItem.ProductName }}</h3>
+				<p>{{ dataItem.UnitPrice | currency }}</p>-
+            </div>
+        </div>
+        <div kendo-pager k-data-source="source"></div>
+
+
+
+
+ <script type="text/x-kendo-angular-template" id="template"></script>

@@ -1,0 +1,6 @@
+<button class="k-button" ng-show="!dialogVisible" ng-click="dialog.open()">Open Dialog</button>
+<div kendo-dialog="dialog" k-title="'Software Update'" k-on-open="dialogVisible = true"
+     k-on-close="dialogVisible = false" k-width="300" k-height="350"
+     k-actions="actions" k-modal="false">
+    <p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>
+</div>

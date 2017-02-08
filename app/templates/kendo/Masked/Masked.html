@@ -1,0 +1,26 @@
+ <ul id="fieldlist">
+      <li>
+        <label>Phone number:</label>
+          <input kendo-masked-text-box ng-model="phone"
+                 k-mask="'(999) 000-0000'" />
+        <div class="value">Value: {{phone}}</div>
+      </li>
+      <li>
+        <label>Credit Card number:</label>
+          <input kendo-masked-text-box ng-model="cc"
+                 k-mask="'0000 0000 0000 0000'" />
+        <div class="value">Value: {{cc}}</div>
+      </li>
+      <li>
+        <label>Social security number:</label>
+          <input kendo-masked-text-box ng-model="ssn"
+                 k-mask="'000-00-0000'" />
+        <div class="value">Value: {{ssn}}</div>
+      </li>
+      <li>
+        <label>UK postcode:</label>
+          <input kendo-masked-text-box ng-model="post"
+                 k-mask="'L0L 0LL'" />
+        <div class="value">Value: {{post}}</div>
+      </li>
+</ul>

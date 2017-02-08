@@ -1,0 +1,25 @@
+<ul kendo-menu k-orientation="menuOrientation" k-rebind="menuOrientation">
+	<li>1 item</li>
+	<li>2 item</li>
+	<li>3 item</li>
+</ul>
+</br>
+<select kendo-drop-down-list k-ng-model="menuOrientation" k-value-primitive="true" k-on-change="change()">
+	<option selected value="horizontal">horizontal</option>
+	<option value="vertical">vertical</option>
+</select>
+</br>
+</br>
+
+<div kendo-slider ng-model="width" k-min="10" k-max="20" style="width:300px"></div>
+</br>
+<div kendo-slider ng-model="height" k-orientation="'vertical'"></div>
+{{width}}, {{height}}
+
+<br>
+<br>
+
+<div>
+	<input kendo-date-time-picker ng-model="str" k-ng-model="obj" k-on-change="getType(obj)">
+</div>
+{{str}}, {{obj}}, {{getType(obj)}}, {{getType(str)}}

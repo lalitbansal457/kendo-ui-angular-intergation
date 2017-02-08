@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.3.1028/styles/kendo.common.min.css" /> -->
+  <link rel="stylesheet" href="kendo.min.css" />
+    <link rel="stylesheet" href="kendo.theme.css" />
+
+    <style type="text/css">
+      #fieldlist {
+                  margin: 0;
+                  padding: 0;
+              }
+          
+              #fieldlist li {
+                  list-style: none;
+                  padding-bottom: .7em;
+                  text-align: left;
+              }
+          
+              #fieldlist label {
+                  display: block;
+                  padding-bottom: .3em;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  font-size: 12px;
+                  color: #444;
+              }
+          
+              #fieldlist li.status {
+                  text-align: center;
+              }
+          
+              #fieldlist li .k-widget:not(.k-tooltip),
+              #fieldlist li .k-textbox {
+                  margin: 0 5px 5px 0;
+              }
+          
+              .confirm {
+                  padding-top: 1em;
+              }
+          
+              .valid {
+                  color: green;
+              }
+          
+              .invalid {
+                  color: red;
+              }
+          
+              #fieldlist li input[type="checkbox"] {
+                  margin: 0 5px 0 0;
+              }
+          
+              span.k-widget.k-tooltip-validation {
+                  display; inline-block;
+                  width: 160px;
+                  text-align: left;
+                  border: 0;
+                  padding: 0;
+                  margin: 0;
+                  background: none;
+                  box-shadow: none;
+                  color: red;
+              }
+          
+              .k-tooltip-validation .k-warning {
+                  display: none;
+              }
+
+              #listView {
+                        padding: 10px 5px;
+                        margin-bottom: -1px;
+                        min-height: 510px;
+                    }
+                    .product {
+                        float: left;
+                        position: relative;
+                        width: 111px;
+                        height: 170px;
+                        margin: 0 5px;
+                        padding: 0;
+                    }
+                    .product img {
+                        width: 110px;
+                        height: 110px;
+                    }
+                    .product h3 {
+                        margin: 0;
+                        padding: 3px 5px 0 0;
+                        max-width: 96px;
+                        overflow: hidden;
+                        line-height: 1.1em;
+                        font-size: .9em;
+                        font-weight: normal;
+                        text-transform: uppercase;
+                        color: #999;
+                    }
+                    .product p {
+                        visibility: hidden;
+                    }
+                    .product:hover p {
+                        visibility: visible;
+                        position: absolute;
+                        width: 110px;
+                        height: 110px;
+                        top: 0;
+                        margin: 0;
+                        padding: 0;
+                        line-height: 110px;
+                        vertical-align: middle;
+                        text-align: center;
+                        color: #fff;
+                        background-color: rgba(0,0,0,0.75);
+                        transition: background .2s linear, color .2s linear;
+                        -moz-transition: background .2s linear, color .2s linear;
+                        -webkit-transition: background .2s linear, color .2s linear;
+                        -o-transition: background .2s linear, color .2s linear;
+                    }
+                    .k-listview:after {
+                        content: ".";
+                        display: block;
+                        height: 0;
+                        clear: both;
+                        visibility: hidden;
+                    }
+
+                    .pdf-page {
+                               margin: 0 auto;
+                               box-sizing: border-box;
+                               box-shadow: 0 5px 10px 0 rgba(0,0,0,.3);
+                               background-color: #fff;
+                               color: #333;
+                               position: relative;
+                           }
+                           .pdf-header {
+                               position: absolute;
+                               top: .5in;
+                               height: .6in;
+                               left: .5in;
+                               right: .5in;
+                               border-bottom: 1px solid #e5e5e5;
+                           }
+                           .invoice-number {
+                               padding-top: .17in;
+                               float: right;
+                           }
+                           .pdf-footer {
+                               position: absolute;
+                               bottom: .5in;
+                               height: .6in;
+                               left: .5in;
+                               right: .5in;
+                               padding-top: 10px;
+                               border-top: 1px solid #e5e5e5;
+                               text-align: left;
+                               color: #787878;
+                               font-size: 12px;
+                           }
+                           .pdf-body {
+                               position: absolute;
+                               top: 3.7in;
+                               bottom: 1.2in;
+                               left: .5in;
+                               right: .5in;
+                           }
+
+                           .size-a4 { width: 8.3in; height: 11.7in; }
+                           .size-letter { width: 8.5in; height: 11in; }
+                           .size-executive { width: 7.25in; height: 10.5in; }
+
+                           .company-logo {
+                               font-size: 30px;
+                               font-weight: bold;
+                               color: #3aabf0;
+                           }
+                           .for {
+                               position: absolute;
+                               top: 1.5in;
+                               left: .5in;
+                               width: 2.5in;
+                           }
+                           .from {
+                               position: absolute;
+                               top: 1.5in;
+                               right: .5in;
+                               width: 2.5in;
+                           }
+                           .from p, .for p {
+                               color: #787878;
+                           }
+                           .signature {
+                               padding-top: .5in;
+                           }
+
+
+
+                           #fieldlist {
+                               margin: 0 0 -2em;
+                               padding: 0;
+                           }
+                   
+                           #fieldlist li {
+                               list-style: none;
+                               padding-bottom: 2em;
+                           }
+                   
+                           #fieldlist label {
+                               display: block;
+                               padding-bottom: 1em;
+                               font-weight: bold;
+                               text-transform: uppercase;
+                               font-size: 12px;
+                               color: #444;
+                           }
+                   
+                           #fieldlist input {
+                               width: 100%;
+                           }
+                           .value {
+                               padding: .5em 0 0;
+                               font-size: 12px;
+                           }
+
+
+                           #touchSurface {
+                               background: black;
+                               color: white;
+                               padding: 100px 20px;
+                               text-align: center;
+                               font-style: italic;
+                               font-size: 12px;
+                           }
+
+
+
+                           #example {
+                              text-align: center;
+                              }
+                              .k-group {
+                                  display: inline-block;
+                                  text-align: center;
+                                  width: 150px;
+                                  white-space: nowrap;
+                                  border-width: 1px;
+                                  border-style: solid;
+                                  padding: 2em;
+                                  margin: 10px auto;
+                              }
+    </style>
+</head>
+<body>
+  
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="js/angular.js"></script>
+  <script src="js/route.js"></script>
+  <script type="text/javascript" src="js/tpls.js"> </script>
+  <script type="text/javascript" src="js/kendo.all.min.js"></script>
+  <script src="app.js"></script>
+  <script src="http://demos.telerik.com/kendo-ui/content/shared/js/console.js"></script>
+  <script src="controller/dateParser.js"></script>
+</body>
+</html>

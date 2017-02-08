@@ -1,0 +1,18 @@
+<div>
+   <h4>Hover some series</h4>
+   <div kendo-chart
+        k-title="{ text: '1024x768 screen resolution trends for 2009', position: 'bottom' }"
+        k-series-defaults="{ type: 'pie' }"
+        k-series="[{
+                       field: 'share',
+                       categoryField: 'resolution',
+                       padding: 0
+                     }]"
+        k-data-source="screenResolution"
+        k-series-hover="onSeriesHover"
+        style="height: 250px;" ></div>
+</div>
+<div style="padding-top: 1em;">
+   <h4>Console</h4>
+   <div class="console"></div>
+</div>

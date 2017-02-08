@@ -1,0 +1,1 @@
+1. Setting the k-value-primitive to FALSE forces the widget to accept or return an object or an array of objects and k-value-primitive is set to True, you can pass an array of primitive values

@@ -1,0 +1,15 @@
+
+<p>
+    <button class="k-button" ng-click="showPopup()">Popup bottom-right</button><br />
+    <button class="k-button" ng-click="showInContainer()">Show in container</button><br />
+    <button class="k-button" ng-click="dismissAll()">Dismiss all</button>
+</p>
+
+<script id="notificationTemplate" type="text/x-kendo-template">
+	<p style="width: 16em; padding:1em;white-space:nowrap"> {{ngValue}}, #= kValue # </p>
+</script>
+
+<span kendo-notification="notf1" k-options="notf1Options"></span>
+<span kendo-notification="notf2" k-append-to="'#container'"></span>
+
+<div id="container" class="demo-section k-content"></div>
